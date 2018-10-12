@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,6 +81,18 @@ body {
 {
    width:100%;
 }
+   
+
+td, th {
+    border: 0.2px
+    solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 .dark
 {
   background-color:#330099;
@@ -136,7 +149,7 @@ body {
 <body>
 
 <div class="sidenav">
- <a href="pollresult.html"><font size="5"> <span style="color: #993300;"><b>Poll Results </b></span></font></a>
+ <a href="pollresult.html"><font size="5"> <span style="color: #993300;"><b>Poll Results </b></span></font></a>
     <a href="sturag.html"><font size="4">Student Registration</font></a>
   <a href="createpoll.html"><font size="4">Create Poll</font></a>
     <a href="addcircular.html"><font size="4">Add Circular</font></a>
@@ -150,9 +163,42 @@ body {
 </div>
 
 <div class="main">
-    <h3 style="color: blue;"> <a name="about">Polls Results</a></h3>
-	<h6 id="demo"  style="color:green;" font size="3"></h6>
-	<br/>
+	<font size="2.5"><table id="demo"  style="color:black;  ">
+	         
+				  <tr >
+                      <th >
+                      <label for-" Name"><span style="color:brown;"><b><center>Poll Id</center></b></span></label>
+                      </th>
+                      <th>
+                      <label for-" Name"><span style="color:brown;">Question</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">1.</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">vote</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">2.</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">vote</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">3.</span></label>
+                      </th>
+                      <th>
+                      <label for-" Name"><span style="color:brown;">vote</span></label>
+                      </th>
+					  <th>
+                      <label for-" Name"><span style="color:brown;">4.</span></label>
+                      </th>
+                      <th>
+                      <label for-" Name"><span style="color:brown;">vote</span></label>
+                      </th>
+                    </tr>
+			
+	</table></font>
    </div>
      
 </body>
@@ -199,7 +245,7 @@ function myFunction() {
   var op6 = childSnapshot.val().option2n;
   var op7 = childSnapshot.val().option3n;
   var op8 = childSnapshot.val().option4n;
-  $("#demo").append("<span style='color: #993300;'><b>Poll ID :- </b></span>"+id_val+"</br><span style='color: #993300;'><b>Question :</b></span> "+Ques+"</br><span style='color: #993300;'><b>No. of Votes for option1 (' "+op5+" '): </b></span>"+op1+"</br><span style='color: #993300;'><b>No. of Votes for option2 (' "+op6+" '): </b></span>"+op2+"</br><span style='color: #993300;'><b>No. of Votes for option3 (' "+op7+" '): </b></span>"+op3+"</br><span style='color: #993300;'><b>No. of Votes for option4 (' "+op8+" '): </b></span>"+op4+"</br></br>"); });
+  $("#demo").append("<tr><td>"+id_val+"</td><td>"+Ques+"</td><td>"+op5+"</td><td>"+op1+"</td><td>"+op6+"</td><td> "+op2+" </td><td>"+op7+" </td><td>"+op3+"</td><td>"+op8+"</td><td>"+op4+"</td></tr>"); });
   });
 </script>
 </body>
