@@ -185,7 +185,7 @@ function myFunction() {
     messagingSenderId: "287611465178",
   };
   firebase.initializeApp(config);  
-  var userDataRef = firebase.database().ref("complaints").orderByKey();  //this is to read data from firebase database.
+  var userDataRef = firebase.database().ref().child('complaints').orderByChild('date');  //this is to read data from firebase database.
   userDataRef.once("value").then(function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
   var key = childSnapshot.key;
