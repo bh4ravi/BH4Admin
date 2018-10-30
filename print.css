@@ -34,9 +34,7 @@ body {
 }
 
 .header {
-  padding: 10px 16px;
-  background: #330099;
-  color: #f1f1f1;
+display:none;
 }
 
 .content {
