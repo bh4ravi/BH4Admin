@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sidenav {
+    display:none;
+}
+
+.sidenav a {
+    display:none;
+}
+
+.sidenav a:hover {
+    display:none;
+}
+
+.main {
+    margin-left: 15px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: -5px -10px;
+    margin-top: 0px;
+    margin-right:50px;
+	background-image:url("back.jpg");
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 10px;}
+    .sidenav a {font-size: 18px;}
+}
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: #330099;
+  color: #f1f1f1;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+    .container
+{
+   width:100%;
+}
+.dark
+{
+  background-color:#330099;
+  color:white;
+}
+.light
+{
+  background-color:#c9ccf2;
+}
+#top_left
+{
+  display:inline-block;
+  margin-left:32px;
+}
+#top_right
+{
+  float:right;
+  margin-right:350px;
+  color:yellowgreen;
+}
+#top_div
+{
+  height:95px;
+  line-height:40px;
+}
+  
+
+#top_d
+{
+  height:40px;
+  line-height:40px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.fixu{
+  display:none;
+   
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
