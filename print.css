@@ -63,29 +63,10 @@ display:none;
 {
   background-color:#c9ccf2;
 }
-#top_left
-{
-  display:inline-block;
-  margin-left:32px;
-}
-#top_right
-{
-  float:right;
-  margin-right:350px;
-  color:yellowgreen;
-}
-#top_div
-{
-  height:95px;
-  line-height:40px;
-}
+
   
 
-#top_d
-{
-  height:40px;
-  line-height:40px;
-}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
