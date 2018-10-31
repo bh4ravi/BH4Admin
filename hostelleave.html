@@ -60,8 +60,27 @@
     <div class="cd">
 	</br>
 	
-        <center>Choose Date:
+        <center>From-Date:
   <input type="date" id="bday"></input><button onclick="doit(bday.value)">Search</button>
+         &nbsp &nbsp Off-Date:
+  <input type="date" id="bday1"></input><button onclick="doit2(bday1.value)">Search</button>
+         &nbsp &nbsp &nbsp Month:
+   <select name ="month" id="month" class="required-entry">
+	<option value="" disabled selected>Choose Month</option>
+			<option value="01">January</option>
+            <option value="02">February</option>
+			<option value="03">March</option>
+			<option value="04">April</option>
+			<option value="05">May</option>
+			<option value="06">June</option>
+			<option value="07">July</option>
+			<option value="08">August</option>
+			<option value="09">September</option>
+			<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+        </select><button onclick="doit3(month.value)">Search</button>
+
     </div>
 </br></br>
 <div class="main" id="main">
@@ -156,6 +175,69 @@ function myFunction() {
   var op7 = childSnapshot.val().status;
   var op8 = childSnapshot.val().offDate;
   if(op1==date)
+      $("#demo").append("<tr><td>"+Ques+"</td><td>"+Ques1+"</td><td>"+id_val+"</td><td>"+op1+"</td><td>"+op2+"</td><td>"+op3+"</td><td> "+op4+" </td><td>"+op5+" </td><td>"+op6+" </td><td>"+op7+" </td><td>"+op8+"</td></tr>"); });
+  });
+ }
+function doit2(date){
+  date=date.replace(/-/g, "/");
+  date=date.split("/").reverse().join("/");
+  var config = {
+    apiKey: "AlzaSyAX2YzZd3d6Z0iFW9eT11LM4rbe5PZcuNs",
+    authDomain: "bh4-nitj.firebaseapp.com",
+    databaseURL: "https://bh4-nitj.firebaseio.com",
+    projectId: "bh4-nitj",
+    storageBucket: "bh4-nitj.appspot.com",
+    messagingSenderId: "287611465178",
+  };
+  firebase.initializeApp(config);  
+  var userDataRef = firebase.database().ref("hostelLeave").orderByKey();  //this is to read data from firebase database.
+  userDataRef.once("value").then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+  var key = childSnapshot.key;
+  var childData = childSnapshot.val();              
+  var Ques = childSnapshot.val().rollNumber;
+  var Ques1 = childSnapshot.val().name;
+  var id_val = childSnapshot.val().roomNumber;
+  var op1 = childSnapshot.val().fromDate;
+  var op2 = childSnapshot.val().toDate;
+  var op3 = childSnapshot.val().departureTime;
+  var op4 = childSnapshot.val().purpose;
+  var op5 = childSnapshot.val().address;
+  var op6 = childSnapshot.val().phoneNumber;
+  var op7 = childSnapshot.val().status;
+  var op8 = childSnapshot.val().offDate;
+  if(op8==date)
+      $("#demo").append("<tr><td>"+Ques+"</td><td>"+Ques1+"</td><td>"+id_val+"</td><td>"+op1+"</td><td>"+op2+"</td><td>"+op3+"</td><td> "+op4+" </td><td>"+op5+" </td><td>"+op6+" </td><td>"+op7+" </td><td>"+op8+"</td></tr>"); });
+  });
+ }
+ function doit3(month){
+  var config = {
+    apiKey: "AlzaSyAX2YzZd3d6Z0iFW9eT11LM4rbe5PZcuNs",
+    authDomain: "bh4-nitj.firebaseapp.com",
+    databaseURL: "https://bh4-nitj.firebaseio.com",
+    projectId: "bh4-nitj",
+    storageBucket: "bh4-nitj.appspot.com",
+    messagingSenderId: "287611465178",
+  };
+  firebase.initializeApp(config);  
+  var userDataRef = firebase.database().ref("hostelLeave").orderByKey();  //this is to read data from firebase database.
+  userDataRef.once("value").then(function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+  var key = childSnapshot.key;
+  var childData = childSnapshot.val();              
+  var Ques = childSnapshot.val().rollNumber;
+  var Ques1 = childSnapshot.val().name;
+  var id_val = childSnapshot.val().roomNumber;
+  var op1 = childSnapshot.val().fromDate;
+  var op2 = childSnapshot.val().toDate;
+  var op3 = childSnapshot.val().departureTime;
+  var op4 = childSnapshot.val().purpose;
+  var op5 = childSnapshot.val().address;
+  var op6 = childSnapshot.val().phoneNumber;
+  var op7 = childSnapshot.val().status;
+  var op8 = childSnapshot.val().offDate;
+  var op9 = childSnapshot.val().month;
+  if(op9==month)
       $("#demo").append("<tr><td>"+Ques+"</td><td>"+Ques1+"</td><td>"+id_val+"</td><td>"+op1+"</td><td>"+op2+"</td><td>"+op3+"</td><td> "+op4+" </td><td>"+op5+" </td><td>"+op6+" </td><td>"+op7+" </td><td>"+op8+"</td></tr>"); });
   });
  }
