@@ -13,6 +13,16 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
+.buttons {
+    background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 9px;
+}
 .cd
 {
    width:100%;
