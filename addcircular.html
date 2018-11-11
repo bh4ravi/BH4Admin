@@ -55,6 +55,7 @@
 	<option value="" disabled selected>Choose Type</option>
 			<option value="c">Circulars</option>
             <option value="a">Achievements</option>
+	     <option value="m">Mess Bill</option>
         </select></br></br>
 	<font size="4"><span style="color: blueviolet;"><b>Title:</b></span></font><br/>
        <textarea name="titly" id="abc" style="width:600px; height:50px"></textarea></br>
@@ -136,6 +137,31 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
   var playersRef =firebase.database().ref("achievements");  //this is to append new child data with default key
+  playersRef.push ({
+   "title":uploader.value,
+   "link":file
+  });
+  alert("Data Successfully Entered\nWait for 10 seconds and then reload the page (ctrl+r) to continue.");
+  }
+   else if(type=="m"){
+   var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://fcm.googleapis.com/fcm/send",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "key=AAAAQvb6rdo:APA91bHxNjlpY_BEJTO69GDbxN58tH7Bfcf_SgUwJQss0qR48OrajPlDIw5n9tDRDtY98UFTeB5grYVi5cpMnHSbXbaIDQGQohc1qK6didUZFx68yr95PLLBdOHly9KNjWtsp5jKfCYN",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "da9e1ddc-eed7-fd93-210e-1761bfd7da65"
+  },
+  "processData": false,
+  "data": "{\r\n  \"to\": \"/topics/circulars\",\r\n  \r\n  \"notification\": {\r\n\t \"title\": \"New Mess Bill Arrived\",\r\n      \"text\": \""+uploader.value+"\"\r\n  }\r\n}"
+}
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+  var playersRef =firebase.database().ref("messCirculars");  //this is to append new child data with default key
   playersRef.push ({
    "title":uploader.value,
    "link":file
