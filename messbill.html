@@ -189,6 +189,7 @@ body {
 			<option value="even">Even</option>
             <option value="odd">Odd</option>
         </select>
+		<input type="text" id="amname" placeholder="Enter Mess Fee">
 		<br/>
 		</br>
               <form>
@@ -262,7 +263,7 @@ body {
                    </table>
                    <font size="3"> <span style="color: red">* Please check all details carefully !!</span></font> 
                   <br/>
-                  <input class="button" type="button" value="submit"  onclick="javascript:adddata(sem.value,month,N1.value,R1.value,N2.value,R2.value,N3.value,R3.value,N4.value,R4.value,N5.value,R5.value)" />
+                  <input class="button" type="button" value="submit"  onclick="javascript:adddata(sem.value,month,N1.value,R1.value,N2.value,R2.value,N3.value,R3.value,N4.value,R4.value,N5.value,R5.value,amname.value)" />
                   <br/><br/><br/>
                   <span style="color: red"><b><i>Don't Waste Food</b></i></span>
                </form>
@@ -289,7 +290,7 @@ function myFunction() {
 }
 </script>
 <script>
-   function adddata(sem,month,n1,r1,n2,r2,n3,r3,n4,r4,n5,r5)
+   function adddata(sem,month,n1,r1,n2,r2,n3,r3,n4,r4,n5,r5,amt)
 {    
     var config = {
     apiKey: "AlzaSyAX2YzZd3d6Z0iFW9eT11LM4rbe5PZcuNs",
@@ -310,38 +311,38 @@ function myFunction() {
   if(rn==n1){
         userDataRef.child(key).child(month.value).set(r1);
 		if(sem==set)
-		{userDataRef.child(key).child("evenSemesterFee").set("24500");
+		{userDataRef.child(key).child("evenSemesterFee").set(amt);
 		}
 		else if(sem=="odd")
-		userDataRef.child(key).child("oddSemesterFee").set("24500");
+		userDataRef.child(key).child("oddSemesterFee").set(amt);
     }
   else if(rn==n2){
         userDataRef.child(key).child(month.value).set(r2);
 		if(sem==set)
-		userDataRef.child(key).child("evenSemesterFee").set("24500");
+		userDataRef.child(key).child("evenSemesterFee").set(amt);
 		else if(sem=="odd")
-		userDataRef.child(key).child("oddSemesterFee").set("24500");
+		userDataRef.child(key).child("oddSemesterFee").set(amt);
     }
   else if(rn==n3){
         userDataRef.child(key).child(month.value).set(r3);
 		if(sem==set)
-		userDataRef.child(key).child("evenSemesterFee").set("24500");
+		userDataRef.child(key).child("evenSemesterFee").set(amt);
 		else if(sem=="odd")
-		userDataRef.child(key).child("oddSemesterFee").set("24500");
+		userDataRef.child(key).child("oddSemesterFee").set(amt);
     }
   else if(rn==n4){
         userDataRef.child(key).child(month.value).set(r4);
 		if(sem=="even")
-		userDataRef.child(key).child("evenSemesterFee").set("24500");
+		userDataRef.child(key).child("evenSemesterFee").set(amt);
 		else if(sem=="odd")
-		userDataRef.child(key).child("oddSemesterFee").set("24500");
+		userDataRef.child(key).child("oddSemesterFee").set(amt);
     }
   else if(rn==n5){
         userDataRef.child(key).child(month.value).set(r5);
 		if(sem=="even")
-		userDataRef.child(key).child("evenSemesterFee").set("24500");
+		userDataRef.child(key).child("evenSemesterFee").set(amt);
 		else if(sem=="odd")
-		userDataRef.child(key).child("oddSemesterFee").set("24500");
+		userDataRef.child(key).child("oddSemesterFee").set(amt);
     }	
 	  });
   });
