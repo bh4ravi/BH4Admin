@@ -125,6 +125,9 @@
                       <label for-" Name"><span style="color:brown;">Odd</span></label>
                       </th>
 					  <th>
+                      <label for-" Name"><span style="color:brown;">July</span></label>
+                      </th>
+					  <th>
                       <label for-" Name"><span style="color:brown;">August</span></label>
                       </th>
 					  <th>
@@ -159,9 +162,6 @@
                       </th>
 					  <th>
                       <label for-" Name"><span style="color:brown;">June</span></label>
-                      </th>
-					  <th>
-                      <label for-" Name"><span style="color:brown;">July</span></label>
                       </th>
 					  <th>
                       <label for-" Name"><span style="color:brown;">total</span></label>
@@ -226,7 +226,7 @@ function myFunction() {
   var op14= childSnapshot.val().july;
   var total=Number(op3)+Number(op4)+Number(op5)+Number(op6)+Number(op7)+Number(op8)+Number(op9)+Number(op10)+Number(op11)+Number(op12)+Number(op13)+Number(op14);
   var balance=Number(op1)+Number(op2)-total;
-  $("#demo").append("<tr><td>"+id_val+"</td><td>"+op1+"</td><td>"+op3+"</td><td>"+op4+"</td><td>"+op5+"</td><td>"+op6+"</td><td>"+op7+"</td><td>"+op2+"</td><td>"+op8+"</td><td>"+op9+"</td><td>"+op10+"</td><td>"+op11+"</td><td>"+op12+"</td><td>"+op13+"</td><td>"+op14+"</td><td>"+total+"</td><td>"+balance+"</td></tr>"); });
+  $("#demo").append("<tr><td>"+id_val+"</td><td>"+op1+"</td><td>"+op14+"</td><td>"+op3+"</td><td>"+op4+"</td><td>"+op5+"</td><td>"+op6+"</td><td>"+op7+"</td><td>"+op2+"</td><td>"+op8+"</td><td>"+op9+"</td><td>"+op10+"</td><td>"+op11+"</td><td>"+op12+"</td><td>"+op13+"</td><td>"+total+"</td><td>"+balance+"</td></tr>"); });
   });
 </script>
 </body>
